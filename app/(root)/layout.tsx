@@ -1,6 +1,6 @@
 import React, { Children, ReactNode } from "react";
 
-const RootLayout = ({children}:{children:ReactNode}) => {
+const MeetingLayout = ({children}:{children:ReactNode}) => {
   return(
     <main>
       
@@ -10,4 +10,4 @@ const RootLayout = ({children}:{children:ReactNode}) => {
   );
 };
 
-export default RootLayout;
+export default MeetingLayout;
