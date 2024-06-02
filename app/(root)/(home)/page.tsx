@@ -2,8 +2,8 @@
 const Home = () => {
   const now = new Date();
 
-  const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
-  const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);
+  const time = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });  // It returns a string representing the time portion of the given date according to the current locale's conventions.
+  const date = (new Intl.DateTimeFormat('en-US', { dateStyle: 'full' })).format(now);  //This line of code is creating a formatted date string 
 
   return (
     <section className="flex size-full flex-col gap-5 text-white">
