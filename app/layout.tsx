@@ -5,6 +5,12 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 
 
+import "@stream-io/video-react-sdk/dist/css/styles.css";
+// import "react-datepicker/dist/react-datepicker.css";
+// import "./globals.css";
+// import { Toaster } from "@/components/ui/toaster";
+
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
