@@ -1,3 +1,4 @@
+import CallList from "@/components/CallList";
 import React from "react";
 
 const PreviousPage = () => {
@@ -6,6 +7,8 @@ const PreviousPage = () => {
           <div className="text-3xl font-bold">
             Previous
           </div>
+
+          <CallList type="ended"/>
         </section>
         );
 };
