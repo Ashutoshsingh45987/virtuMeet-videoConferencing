@@ -10,6 +10,7 @@ import { Call, useStreamVideoClient } from "@stream-io/video-react-sdk";
 import { useToast } from "@/components/ui/use-toast";
 import { Textarea } from "./ui/textarea";
 import ReactDatePicker from 'react-datepicker';
+import { Input } from "./ui/input";
 
 
 const initialValues = {
@@ -116,7 +117,7 @@ const MeetingTypeList = () => {
               <div className=" flex flex-col gap-2.5">
                 <label className=" text-base font-normal leading-[22px] text-sky-2 ">Add a description</label>
                 <Textarea
-                  className=" border-none bg-dark-1 focus-visible:ring-0 focus-visible:ring-offset-0"                  value={values.description}
+                  className=" border-none bg-dark-1 focus-visible:ring-0 focus-visible:ring-offset-0" value={values.description}
                   onChange={(e) => setValues({ ...values, description: e.target.value })}/>
               </div>
               <div className="flex w-full flex-col gap-2.5">
@@ -164,6 +165,22 @@ const MeetingTypeList = () => {
         buttonText="Start Meeting"
         handleClick={createMeeting}
       />
+
+      <MeetingModal
+        isOpen={meetingState === 'isJoiningMeeting'}
+        onClose={() => setMeetingState(undefined)}
+        title="Type the link here"
+        className="text-center"
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+      >
+        <Input
+          placeholder="Meeting link"
+          onChange={(e) => setValues({ ...values, link: e.target.value })}
+          className="border-none bg-dark-3 focus-visible:ring-0 focus-visible:ring-offset-0"
+        />
+      </MeetingModal>
+
       </section>
   );
 };
